@@ -1,0 +1,190 @@
+:root {
+    --primary-color: #4CAF50; /* Hijau Daur Ulang */
+    --secondary-color: #FF9800; /* Oranye Kreatif */
+    --background-color: #F7F7F7;
+    --card-bg: #FFFFFF;
+    --text-color: #333;
+    --font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    text-align: center;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0 0 5px 0;
+    font-size: 2em;
+}
+
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    background: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Area Deteksi (Kamera & Manual) --- */
+#detection-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#camera-container {
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    border: 3px dashed var(--primary-color);
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+#webcam {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    background-color: #000; /* Latar belakang hitam untuk kamera */
+}
+
+#manual-input {
+    width: 100%;
+    max-width: 400px;
+}
+
+#manual-select, .main-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 8px;
+    font-size: 1em;
+}
+
+.main-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-btn:hover {
+    background-color: #388E3C;
+}
+
+.main-btn .icon {
+    font-size: 1.2em;
+    margin-right: 5px;
+}
+
+.secondary-btn {
+    background-color: #ccc;
+    color: var(--text-color);
+}
+.secondary-btn:hover {
+    background-color: #aaa;
+}
+
+
+/* --- Area Hasil (Solusi) --- */
+#result-area h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+#solution-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+}
+
+.solution-card {
+    background-color: var(--card-bg);
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+}
+
+.solution-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.solution-card h3 {
+    color: var(--secondary-color);
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+}
+
+.solution-card h3::before {
+    content: "💡";
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.video-embed {
+    margin-top: 10px;
+    aspect-ratio: 16 / 9; /* Untuk video responsif */
+    width: 100%;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* --- Footer Grafis Menarik --- */
+footer {
+    padding: 15px;
+    background-color: #e8f5e9; /* Warna hijau muda */
+    margin-top: 30px;
+}
+
+.recycle-elements span {
+    font-size: 2em;
+    margin: 0 10px;
+    animation: bounce 2s infinite ease-in-out;
+}
+.recycle-elements span:nth-child(2) { animation-delay: 0.2s; }
+.recycle-elements span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+/* --- Responsif (Untuk HP/Layar Kecil) --- */
+@media (min-width: 600px) {
+    #detection-area {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+    #camera-container, #manual-input {
+        flex: 1;
+        max-width: 45%;
+    }
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deteksi Sampah & Solusi Daur Ulang ♻️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Trash Detective 🕵️‍♀️</h1>
+        <p>Ayo deteksi sampahmu dan ubah jadi karya!</p>
+    </header>
+
+    <main>
+        <div id="detection-area">
+            <div id="camera-container">
+                <video id="webcam" autoplay playsinline></video>
+                <canvas id="canvas" style="display:none;"></canvas>
+                <button id="capture-btn" class="main-btn">
+                    <span class="icon">📸</span> Ambil Foto Sampah
+                </button>
+                <p id="loading-msg" style="display: none;">Mendeteksi...</p>
+            </div>
+            
+            <div id="manual-input">
+                <p>Atau pilih secara **manual**:</p>
+                <select id="manual-select">
+                    <option value="">-- Pilih Jenis Sampah --</option>
+                    <option value="plastik_botol">Botol Plastik PET</option>
+                    <option value="plastik_tas">Kantong Plastik Kresek</option>
+                    <option value="kertas_koran">Kertas Koran/Majalah</option>
+                    <option value="kertas_karton">Kardus/Karton</option>
+                    <option value="b3_baterai">Baterai Bekas</option>
+                    <option value="b3_obat">Obat Kadaluarsa</option>
+                </select>
+                <button id="manual-btn" class="main-btn">Cari Solusi</button>
+            </div>
+        </div>
+
+        <div id="result-area" class="hidden">
+            <h2>🎉 Sampah Dideteksi: <span id="detected-type"></span></h2>
+            <div id="solution-container">
+                </div>
+            <button id="reset-btn" class="main-btn secondary-btn">Deteksi Sampah Lain</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Trash Detective App. Mari Daur Ulang! 🌍</p>
+        <div class="recycle-elements">
+            <span>🌱</span>
+            <span>💧</span>
+            <span>☀️</span>
+            <span>✨</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
