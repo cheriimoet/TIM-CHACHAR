@@ -18,6 +18,11 @@
             <div id="camera-container">
                 <video id="webcam" autoplay playsinline></video>
                 <canvas id="canvas" style="display:none;"></canvas>
+                
+                <button id="toggle-cam-btn" class="main-btn secondary-btn" style="display: none; margin-bottom: 10px;">
+                    <span class="icon">🔄</span> Ganti Kamera (Depan/Belakang)
+                </button>
+                
                 <button id="capture-btn" class="main-btn">
                     <span class="icon">📸</span> Ambil Foto Sampah
                 </button>
@@ -28,12 +33,19 @@
                 <p>Atau pilih secara **manual**:</p>
                 <select id="manual-select">
                     <option value="">-- Pilih Jenis Sampah --</option>
-                    <option value="plastik_botol">Botol Plastik PET</option>
-                    <option value="plastik_tas">Kantong Plastik Kresek</option>
-                    <option value="kertas_koran">Kertas Koran/Majalah</option>
-                    <option value="kertas_karton">Kardus/Karton</option>
+                    
+                    <option value="plastik_botol_pet">Botol Plastik PET (Air Mineral)</option>
+                    <option value="plastik_pembungkus_makanan">Pembungkus Makanan/Sachet</option>
+                    <option value="plastik_tutup_botol">Tutup Botol Plastik</option>
+                    <option value="plastik_spons_cuci">Spons Cuci Piring Bekas</option>
+
+                    <option value="kertas_karton_susu">Kardus/Kemasan Minuman (Tetra Pak)</option>
+                    
+                    <option value="logam_kaleng_makanan">Kaleng Makanan/Minuman</option>
+                    
+                    <option value="b3_bekas_cat">Kaleng Bekas Cat Minyak</option>
                     <option value="b3_baterai">Baterai Bekas</option>
-                    <option value="b3_obat">Obat Kadaluarsa</option>
+                    <option value="b3_lampu">Lampu CFL/TL Bekas</option>
                 </select>
                 <button id="manual-btn" class="main-btn">Cari Solusi</button>
             </div>
